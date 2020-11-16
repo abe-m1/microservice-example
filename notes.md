@@ -13,3 +13,6 @@ build docker image:
 docker build -t <docker id>/auth .
 
 when create kubernetes deployment, a service goes with it
+
+start skaffold:
+skaffold dev
