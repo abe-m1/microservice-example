@@ -11,7 +11,7 @@ app.use(json());
 app.use(currentUserRouter);
 app.use(signinRouter);
 app.use(signupRouter);
-app.use(signupRouter);
+app.use(signoutRouter);
 
 app.listen(3000, () => {
   console.log('listening on port 3000!!');
