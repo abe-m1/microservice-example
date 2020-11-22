@@ -22,3 +22,9 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/cont
 
 access host file
 code /etc/hosts
+
+create a secret (imperative command)(for testing)
+kubectl create secret generic jwt-secret --from-literal=JWT_KEY=asdf
+
+get list of secrets
+kubectl get secrets
