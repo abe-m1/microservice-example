@@ -8,7 +8,7 @@ export class RequestValidationError extends CustomError {
   //the overall class
   constructor(public errors: ValidationError[]) {
     //call super to invoke base class , which is Error
-    super('Error with request');
+    super('Invalid request parameters');
 
     //only because we are extending a built in class
     Object.setPrototypeOf(this, RequestValidationError.prototype);
