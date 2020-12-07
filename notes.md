@@ -30,6 +30,6 @@ get list of secrets
 kubectl get secrets
 
 port forwardiing (for temporary connection)
-kubectl port-forward nats-depl-686ffcdfbc-82shs 4222:4222
+kubectl port-forward nats-depl-74dbf5cddd-gm4tg 4222:4222
 
 when testing nats type in 'rs' to restart server in the terminal
