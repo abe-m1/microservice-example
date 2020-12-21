@@ -1,7 +1,7 @@
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
 import request from 'supertest'
-import { resolveTypeReferenceDirective } from 'typescript';
+import { JsxEmit, resolveTypeReferenceDirective } from 'typescript';
 import { app } from '../app';
 import jwt from 'jsonwebtoken';
 
@@ -25,6 +25,7 @@ global.signin = () => {
    email: 'test@test.com'
  }
 
+
  // Create the JWT!
 const token = jwt.sign(payload, process.env.JWT_KEY!);
 
@@ -41,6 +42,8 @@ const token = jwt.sign(payload, process.env.JWT_KEY!);
  return [`express:sess=${base64}`]
 }
 
+jest.mock('../nats-wrapper');
+
 
 beforeAll(async () => {
   process.env.JWT_KEY = 'asdfasdf';
@@ -54,6 +57,7 @@ beforeAll(async () => {
 });
 
 beforeEach(async () => {
+  jest.clearAllMocks();
   const collections = await mongoose.connection.db.collections();
 
   for (let collection of collections) {
